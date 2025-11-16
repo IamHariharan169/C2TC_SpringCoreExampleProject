@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Defining a bean for Product with ID "productOne" -->
+    <bean id="productOne" class="com.tnsif.springone.Product">
+        <property name="productId" value="101"/>  <!-- Setting productId to 101 -->
+        <property name="productName" value="earphones"/>  <!-- Setting productName to "earphones" -->
+        <property name="price" value="900"/>  <!-- Setting price to 900 -->
+    </bean>
+
+    <!-- Defining another Product bean with ID "productTwo" -->
+    <bean id="productTwo" class="com.tnsif.springone.Product">
+        <property name="productId" value="102"/>  <!-- Setting productId to 102 -->
+        <property name="productName" value="Charger"/>  <!-- Setting productName to "Charger" -->
+        <property name="price" value="600"/>  <!-- Setting price to 600 -->
+    </bean>
+
+    <!-- Defining an extra Product bean with prototype scope -->
+    <bean id="productThree" class="com.tnsif.springone.Product" scope="prototype">
+        <property name="productId" value="103"/>  <!-- Setting productId to 103 -->
+        <property name="productName" value="Power Bank"/>  <!-- Setting productName to "Power Bank" -->
+        <property name="price" value="1200"/>  <!-- Setting price to 1200 -->
+    </bean>
+
+    <!-- Creating a list of products (productList) using an ArrayList -->
+    <bean id="productList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="productOne"/>  <!-- Adding productOne to the list -->
+                <ref bean="productTwo"/>  <!-- Adding productTwo to the list -->
+                <ref bean="productThree"/>  <!-- Adding productThree to the list -->
+            </list>
+        </constructor-arg>
+    </bean>
+	
+    <!-- Defining a Cart bean that uses autowire byType -->
+    <bean id="cartByType" class="com.tnsif.springone.Cart" autowire="byType"/>
+
+    <!-- Defining another Cart bean that uses autowire byName -->
+    <bean id="cartByName" class="com.tnsif.springone.Cart" autowire="byName"/>
+
+	<bean id="cart" class="com.tnsif.springone.Cart">
+    <property name="productList" ref="productList"/>  <!-- Updated to match the field name -->
+	</bean>
+
+    
+</beans>

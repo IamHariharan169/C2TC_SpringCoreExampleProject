@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean Definition -->
+    <bean id="student1" class="com.tnsif.springcoreexample.Student">
+        <property name="Sid" value="101" />
+        <property name="Sname" value="Bhuvana"/>
+        <property name="City" value="Cuddalore" />
+    </bean>
+	<bean id="student2" class="com.tnsif.springcoreexample.Student">
+        <property name="Sid" value="102" />
+        <property name="Sname" value="Abi"/>
+        <property name="City" value="Cuddalore" />
+    </bean>
+   <bean id="student3" class="com.tnsif.springcoreexample.Student">
+        <property name="Sid" value="103" />
+        <property name="Sname" value="Anju"/>
+        <property name="City" value="Villupuram" />
+    </bean>
+</beans>

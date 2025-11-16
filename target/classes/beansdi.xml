@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="Bhuvana" class="com.tnsif.dependencyinjection.Student">
+	 <property name="sid" value="7"/>
+	 <property name="sname" value="Bhuvana"/>
+	 <property name="city" value="Cuddalore"/>
+</bean>
+
+<bean id="Anju" class="com.tnsif.dependencyinjection.Student">
+	 <property name="sid" value="6"/>
+	 <property name="sname" value="Anju"/>
+	 <property name="city" value="Chennai"/>
+</bean>
+
+<bean id="Abi" class="com.tnsif.dependencyinjection.Student1">
+	 <constructor-arg name="sid" value="1"/>
+	 <constructor-arg name="sname" value="Abi"/>
+	 <constructor-arg name="city" value="Cuddalore"/>
+</bean>
+
+<bean id="Lashu" class="com.tnsif.dependencyinjection.Student1">
+	 <constructor-arg name="sid" value="14"/>
+	 <constructor-arg name="sname" value="Lashu"/>
+	 <constructor-arg name="city" value="Erode"/>
+</bean>
+</beans>
+
